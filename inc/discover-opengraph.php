@@ -46,7 +46,7 @@ class DiscovererOpenGraph {
 	public function get_first_url( $content ) {
 		$regexp = "/https?\:\/\/[^\" ]+/i";
 
-		preg_match( $regexp, $content, $url );
+		preg_match( $regexp, $content, $url );var_dump($content, $url);die();
 
 		if ( false === empty( $url ) ) {
 			return $url[0];
@@ -95,7 +95,7 @@ class DiscovererOpenGraph {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return null;
 		}
-
+var_dump(get_post_status( $post_id ));die();
 		/** Make sure the Post is published and is the Link format. */
 		if ( 'publish' !== get_post_status( $post_id ) && 'link' !== get_post_format( $post_id ) ) {
 			return null;
